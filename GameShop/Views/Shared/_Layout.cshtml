@@ -27,10 +27,24 @@
             @*@Html.Partial("_LoginPartial")*@
         </div>
         <!-- End Navigation -->
-    </div>
+    </div>   
     <div class="container body-content">
-        @RenderBody()           
+        @RenderBody()  
+        <hr />
+        <footer>
+            <!-- Footer -->
+            <div id="footer">
+                <p class="left">
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                    <a href="@Url.Action("Contact", "Home")">Contact</a>
+                </p>
+                <p class="right">
+                    &copy; 2010 Shop Around.
+                    Design by <a href="http://bayguzin.ru/" target="_blank" title="">bayguzin.ru</a>
+                </p>
+            </div>
+            <!-- End Footer -->
+        </footer>         
     </div>
-
 </body>
 </html>
