@@ -9,22 +9,26 @@ namespace DAL.Repositories
 {
     public class EFUnitOfWork : IUnitOfWork
     {
-        private OnlineStoreEntities3 db;
+        private OnlineStoreEntities4 db;
         private CategoryRepository categoryRepository;
         private CustomerRepository customerRepository;
         private OrderRepository orderRepository;
         private ProductRepository productRepository;
+        public EFUnitOfWork()
+        {
+
+        }
 
         public EFUnitOfWork(string connectionString)
         {
-            db = new OnlineStoreEntities3(connectionString);
+            db = new OnlineStoreEntities4(connectionString);
         }
 
         public IRepository<Categories> Categories
         {
             get
             {
-                if(categoryRepository !=null)
+                if (categoryRepository == null)
                 {
                     categoryRepository = new CategoryRepository(db);
                 }
@@ -36,7 +40,7 @@ namespace DAL.Repositories
         {
             get
             {
-                if(customerRepository != null)
+                if (customerRepository == null)
                 {
                     customerRepository = new CustomerRepository(db);
                 }
@@ -48,19 +52,19 @@ namespace DAL.Repositories
         {
             get
             {
-                if(orderRepository !=null)
+                if (orderRepository == null)
                 {
                     orderRepository = new OrderRepository(db);
                 }
                 return orderRepository;
-            }          
+            }
         }
 
         public IRepository<Products> Products
         {
             get
             {
-                if(productRepository != null)
+                if (productRepository == null)
                 {
                     productRepository = new ProductRepository(db);
                 }
@@ -93,6 +97,6 @@ namespace DAL.Repositories
             GC.SuppressFinalize(this);
         }
 
-        
+
     }
 }

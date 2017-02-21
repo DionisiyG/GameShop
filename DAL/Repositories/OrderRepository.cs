@@ -11,7 +11,7 @@ namespace DAL.Repositories
 {
     public class OrderRepository : BaseRepository<Orders>, IRepository<Orders>
     {      
-        public OrderRepository(OnlineStoreEntities3 context)
+        public OrderRepository(OnlineStoreEntities4 context)
         {
             this.db = context;
         }

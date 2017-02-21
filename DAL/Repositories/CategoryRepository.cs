@@ -10,7 +10,7 @@ namespace DAL.Repositories
 {
     public class CategoryRepository : BaseRepository<Categories>, IRepository<Categories>
     {
-        public CategoryRepository(OnlineStoreEntities3 context)
+        public CategoryRepository(OnlineStoreEntities4 context)
         {
             this.db = context;
         }

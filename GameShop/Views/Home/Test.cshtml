@@ -1,0 +1,24 @@
+﻿@using DAL
+@model IList<Categories>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <div> 
+        @foreach(var i in Model)
+        {
+            <tr>
+                <td>@i.CategoryName</td>
+            </tr>
+        }
+    </div>
+</body>
+</html>

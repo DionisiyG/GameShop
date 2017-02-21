@@ -474,7 +474,7 @@
           <End Role="Categories" Type="Self.Categories" Multiplicity="*" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="OnlineStoreEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OnlineStoreEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
@@ -519,7 +519,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OnlineStoreModelStoreContainer" CdmEntityContainer="OnlineStoreEntities3">
+        <EntityContainerMapping StorageEntityContainer="OnlineStoreModelStoreContainer" CdmEntityContainer="OnlineStoreEntities4">
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="OnlineStoreModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">

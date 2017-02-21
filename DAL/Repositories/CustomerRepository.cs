@@ -10,7 +10,7 @@ namespace DAL.Repositories
 {
     public class CustomerRepository : BaseRepository<AspNetUsers>, IRepository<AspNetUsers>
     {
-        public CustomerRepository(OnlineStoreEntities3 context)
+        public CustomerRepository(OnlineStoreEntities4 context)
         {
             this.db = context;
         }

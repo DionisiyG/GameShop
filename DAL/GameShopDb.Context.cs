@@ -13,20 +13,21 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnlineStoreEntities3 : DbContext
+    public partial class OnlineStoreEntities4 : DbContext
     {
-        public OnlineStoreEntities3()
-            : base("name=OnlineStoreEntities3")
+        public OnlineStoreEntities4()
+            : base("name=OnlineStoreEntities4")
         {
         }
-        public OnlineStoreEntities3(string connectionString)
-            :base(connectionString)
+        public OnlineStoreEntities4(string connectionString)
+            : base(connectionString)
         {
-                
+           
         }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            base.OnModelCreating(modelBuilder);
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }

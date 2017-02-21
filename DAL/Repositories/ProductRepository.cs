@@ -10,7 +10,7 @@ namespace DAL.Repositories
 {
     public class ProductRepository : BaseRepository<Products>, IRepository<Products>
     {
-        public ProductRepository(OnlineStoreEntities3 context)
+        public ProductRepository(OnlineStoreEntities4 context)
         {
             this.db = context;
         }

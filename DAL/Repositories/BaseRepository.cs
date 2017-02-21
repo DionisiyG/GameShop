@@ -8,6 +8,6 @@ namespace DAL.Repositories
 {
     public class BaseRepository<T> where T : class
     {
-        protected OnlineStoreEntities3 db;
+        protected OnlineStoreEntities4 db;
     }
 }
