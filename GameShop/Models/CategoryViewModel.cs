@@ -1,4 +1,5 @@
-﻿using BLL.Interfaces;
+﻿using BLL;
+using BLL.Interfaces;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -9,21 +10,23 @@ namespace GameShop.Models
 {
     public class CategoryViewModel
     {
+        //private ICategoryService categoryService = null;
         private Categories categoriesData = null;
-        public CategoryViewModel()
-        {
-        }
+        public CategoryViewModel(){}
         public CategoryViewModel(Categories categoriesData)
         {
             this.categoriesData = categoriesData;
         }
-
         public string Id
         {
             get
             {
-                if (this.categoriesData == null) return null;
-                return categoriesData.Id;
+                if (this.categoriesData == null)
+                {
+                    //return categoriesData.Id;
+                    return null;
+                }
+                    return this.categoriesData.Id;
             }
         }
 
@@ -32,18 +35,14 @@ namespace GameShop.Models
             get
             {
                 if (this.categoriesData == null) return null;
-                return this.categoriesData.CategoryName;
+                    return this.categoriesData.CategoryName;
             }
             set
             {
                 if (this.categoriesData == null) return;
-                this.categoriesData.CategoryName = value;
+                    this.categoriesData.CategoryName = value;
             }
         }
 
-        public void GetAllCategories(ICategoryService provider)
-        {
-            provider.GetAllCategories();
-        }
     }
 }

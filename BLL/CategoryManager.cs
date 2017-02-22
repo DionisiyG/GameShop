@@ -12,7 +12,7 @@ namespace BLL
 {
     public class CategoryManager : ICategoryService
     {
-        IUnitOfWork Database { get; set; }
+        IUnitOfWork Database = null;
         public CategoryManager(IUnitOfWork uow)
         {
             Database = uow;

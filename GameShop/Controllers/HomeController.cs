@@ -17,6 +17,11 @@ namespace GameShop.Controllers
     {
         ICategoryService categoryService = null;
 
+        public HomeController()
+        {
+
+        }
+
         public HomeController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;      
@@ -41,11 +46,18 @@ namespace GameShop.Controllers
             return View(t);
         }
 
-        public ActionResult PartialCategory(CategoryViewModel category)//CategoryViewModel category
+        public ActionResult PartialCategory()//CategoryViewModel category
         {
             //categoryService.GetCategories().ToList();
-            category = categoryService.GetAllCategories().Select(el => new CategoryViewModel(el)).ToList();
-            return PartialView(category);
+
+            //var category = categoryService.GetAllCategories().Select(x => new CategoryViewModel(x)).ToList();
+            var category = categoryService.GetAllCategories();
+            List<object> test = new List<object>();
+            foreach (var c in category)
+            {
+                test.Add(c);
+            }
+            return PartialView(test);
         }
     }
 }
