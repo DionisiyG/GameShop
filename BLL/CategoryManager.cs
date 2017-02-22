@@ -7,19 +7,23 @@ using System.Threading.Tasks;
 using DAL.Repositories;
 using DAL.Interfaces;
 using DAL;
+using AutoMapper;
 
 namespace BLL
 {
     public class CategoryManager : ICategoryService
     {
-        IUnitOfWork Database = null;
+        IUnitOfWork Database { get; set; }
         public CategoryManager(IUnitOfWork uow)
         {
             Database = uow;
         }
-        public IEnumerable<Categories> GetAllCategories()
+        public IEnumerable<CategoriesDTO> GetAllCategories()
         {
-            return Database.Categories.GetAll();
+            Mapper.Initialize(cfg => cfg.CreateMap<Categories, CategoriesDTO>());
+            return Mapper.Map<IEnumerable<Categories>, List<CategoriesDTO>>(Database.Categories.GetAll());
+            //return Database.Categories.GetAll();
         }
     }
 }
+    

@@ -1,4 +1,5 @@
-﻿
+﻿@using GameShop.Models;
+@model HomeIndexModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home Page";
@@ -116,14 +117,13 @@
                                 <a href="#" class="bul">Advanced search</a><br />
                                 <a href="#" class="bul">Contact Customer Support</a>
                             </p>
-
                         </form>
                     </div>
                 </div>
                 <!-- End Search -->
                 <!-- Categories -->
                 <div class="box categories">
-                   @*@Html.Partial("PartialCategory")*@
+                   @Html.Partial("_CategoriesPartial", Model.CategoriesDto)
                 </div>
                 <!-- End Categories -->
             </div>

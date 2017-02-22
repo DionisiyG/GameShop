@@ -10,6 +10,6 @@ namespace BLL.Interfaces
 {
    public interface ICategoryService
     {
-        IEnumerable<Categories> GetAllCategories();
+        IEnumerable<CategoriesDTO> GetAllCategories();
     }
 }

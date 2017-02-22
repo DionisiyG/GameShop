@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BLL.CategoriesDTO>
+
+<h2>Categories <span></span></h2>
+<div class="box-content">
+@if (Model != null)
+{
+    <ul>
+        
+        @foreach (var i in Model)
+        {
+            <li><a href="#">@i.CategoryName</a></li>
+            @*<li><a href="#">Category 2 @i.CategoryName</a></li>
+                <li><a href="#">Category 3 @i.CategoryName</a></li>
+                <li><a href="#">Category 4 @i.CategoryName</a></li>
+                <li class="last"><a href="#">Category 5</a></li>*@
+        }
+        
+    </ul>
+}
+</div>

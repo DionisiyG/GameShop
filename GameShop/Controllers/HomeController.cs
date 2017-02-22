@@ -10,12 +10,13 @@ using AutoMapper;
 using DAL.Repositories;
 using DAL;
 using BLL.Interfaces;
+using BLL;
 
 namespace GameShop.Controllers
 {
     public class HomeController : Controller
     {
-        ICategoryService categoryService = null;
+        ICategoryService categoryService;
 
         public HomeController()
         {
@@ -26,11 +27,19 @@ namespace GameShop.Controllers
         {
             this.categoryService = categoryService;      
         }
-        EFUnitOfWork db = new EFUnitOfWork("OnlineStoreEntities4");
+
+        //EFUnitOfWork db = new EFUnitOfWork("OnlineStoreEntities4");
         //OnlineStoreEntities4 db1 = new OnlineStoreEntities4();
+        //public ActionResult Test()
+        //{
+        //    var t = db.Categories.GetAll().ToList();
+        //    return View(t);
+        //}
+
         public ActionResult Index()
         {
-            return View();
+            HomeIndexModel homeModel = new HomeIndexModel(categoryService);        
+            return View(homeModel);
         }
 
         public ActionResult Contact()
@@ -40,24 +49,14 @@ namespace GameShop.Controllers
             return View();
         }
 
-        public ActionResult Test()
-        {
-            var t = db.Categories.GetAll().ToList();
-            return View(t);
-        }
 
-        public ActionResult PartialCategory()//CategoryViewModel category
-        {
-            //categoryService.GetCategories().ToList();
+        public PartialViewResult _CategoriesPartial()
+        {         
+            IEnumerable<CategoriesDTO> categoriesDto = categoryService.GetAllCategories();
+            Mapper.Initialize(cfg => cfg.CreateMap<CategoriesDTO, CategoryViewModel>());
+            var category = Mapper.Map<IEnumerable<CategoriesDTO>, List<CategoryViewModel>>(categoriesDto);
 
-            //var category = categoryService.GetAllCategories().Select(x => new CategoryViewModel(x)).ToList();
-            var category = categoryService.GetAllCategories();
-            List<object> test = new List<object>();
-            foreach (var c in category)
-            {
-                test.Add(c);
-            }
-            return PartialView(test);
+            return PartialView("_CategoriesPartial", category);
         }
     }
 }

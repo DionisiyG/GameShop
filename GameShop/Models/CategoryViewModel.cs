@@ -11,38 +11,39 @@ namespace GameShop.Models
     public class CategoryViewModel
     {
         //private ICategoryService categoryService = null;
-        private Categories categoriesData = null;
-        public CategoryViewModel(){}
-        public CategoryViewModel(Categories categoriesData)
-        {
-            this.categoriesData = categoriesData;
-        }
-        public string Id
-        {
-            get
-            {
-                if (this.categoriesData == null)
-                {
-                    //return categoriesData.Id;
-                    return null;
-                }
-                    return this.categoriesData.Id;
-            }
-        }
+        //private Categories categoriesData = null;
+        //public CategoryViewModel(){}
+        //public CategoryViewModel(Categories categoriesData)
+        //{
+        //    this.categoriesData = categoriesData;
+        //}
+        //public string Id
+        //{
+        //    get
+        //    {
+        //        if (this.categoriesData == null)
+        //        {
+        //            //return categoriesData.Id;
+        //            return null;
+        //        }
+        //            return this.categoriesData.Id;
+        //    }
+        //}
 
-        public string CategoryName
-        {
-            get
-            {
-                if (this.categoriesData == null) return null;
-                    return this.categoriesData.CategoryName;
-            }
-            set
-            {
-                if (this.categoriesData == null) return;
-                    this.categoriesData.CategoryName = value;
-            }
-        }
-
+        //public string CategoryName
+        //{
+        //    get
+        //    {
+        //        if (this.categoriesData == null) return null;
+        //            return this.categoriesData.CategoryName;
+        //    }
+        //    set
+        //    {
+        //        if (this.categoriesData == null) return;
+        //            this.categoriesData.CategoryName = value;
+        //    }
+        //}
+        public string Id { get; set; }
+        public string CategoryName { get; set; }
     }
 }
