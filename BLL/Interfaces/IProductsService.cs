@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Repositories;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-   public interface ICategoryService
+   public interface IProductsService
     {
-        IEnumerable<CategoriesDTO> GetAllCategories();
-        CategoriesDTO GetProductsWithCategories(string id);
+        IList<ProductDto> GetMainProducts(string catId);
     }
 }

@@ -43,7 +43,7 @@ h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(imag
 #navigation ul li a.active,
 #navigation ul li a:hover{ background:#fff; color:#8b0000; }
 
-#cart { float:right; width:160px; top:0; right:0; height:51px; background:#8b0000; color:#fff; padding:13px 10px 0 10px; white-space:nowrap; line-height:20px;}
+#cart { float:right; width:160px; top:0; right:0; height:51px; background:#8b0000; color:#fff; padding:13px 10px 0 50px; white-space:nowrap; line-height:20px;}
 a.cart-link { color:#fff; background:url(images/cart-link.gif) no-repeat 0 0; padding:0 0 0 32px; text-decoration: none;}
 a.cart-link:hover { text-decoration: underline;}
 
@@ -127,5 +127,11 @@ h3.ico4 { background-image:url(images/ico4.gif);}
 
 #footer { height:51px; background:#ebebeb; white-space:nowrap; line-height:50px; padding:0 15px; color:#7b7b7b; margin-top:10px;}
 #footer a{ color:#7b7b7b; text-decoration: none;}
+#footer a:nth-child(1) {
+    padding-left: 75px;
+}
+#footer a:nth-child(2) {
+    padding-left: 75px;
+}
 #footer a:hover{ color:#000;}
 #footer span{ padding:0 2px;}

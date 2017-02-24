@@ -84,11 +84,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameShopDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IOrderRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>GameShopDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartialImpl\OnlineStoreEntities4.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>GameShopDb.tt</DependentUpon>
     </Compile>

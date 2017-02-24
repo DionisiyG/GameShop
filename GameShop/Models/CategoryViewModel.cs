@@ -45,5 +45,11 @@ namespace GameShop.Models
         //}
         public string Id { get; set; }
         public string CategoryName { get; set; }
+
+        public string ShowCategories()
+        {
+            //var categoryToShow = 
+            return null;
+        }
     }
 }

@@ -18,11 +18,20 @@ namespace BLL
         {
             Database = uow;
         }
+
         public IEnumerable<CategoriesDTO> GetAllCategories()
         {
             Mapper.Initialize(cfg => cfg.CreateMap<Categories, CategoriesDTO>());
             return Mapper.Map<IEnumerable<Categories>, List<CategoriesDTO>>(Database.Categories.GetAll());
             //return Database.Categories.GetAll();
+        }
+
+        public CategoriesDTO GetProductsWithCategories(string id)
+        {
+            //var category = Database.Categories.GetProductsByCategories(id);
+           //Mapper.Initialize(cfg => cfg.CreateMap<Categories, CategoriesDTO>());
+           // return Mapper.Map<Categories, CategoriesDTO>(category);
+            return null;
         }
     }
 }

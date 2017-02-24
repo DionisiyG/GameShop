@@ -1,5 +1,6 @@
 ﻿using BLL;
 using BLL.Interfaces;
+using BLL.ServiceProviders;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace GameShop.Util
         private void AddBindings()
         {
             kernel.Bind<ICategoryService>().To<CategoryManager>();
+            kernel.Bind<IProductsService>().To<ProductsService>();
         }
     }
 }

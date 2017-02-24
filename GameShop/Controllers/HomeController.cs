@@ -17,28 +17,22 @@ namespace GameShop.Controllers
     public class HomeController : Controller
     {
         ICategoryService categoryService;
+        IProductsService productService;
 
         public HomeController()
         {
 
         }
-
-        public HomeController(ICategoryService categoryService)
+        public HomeController(ICategoryService categoryService, IProductsService productService)
         {
             this.categoryService = categoryService;      
+            this.productService = productService;
         }
-
-        //EFUnitOfWork db = new EFUnitOfWork("OnlineStoreEntities4");
-        //OnlineStoreEntities4 db1 = new OnlineStoreEntities4();
-        //public ActionResult Test()
-        //{
-        //    var t = db.Categories.GetAll().ToList();
-        //    return View(t);
-        //}
-
-        public ActionResult Index()
+        
+        public ActionResult Index(string id = null)
         {
-            HomeIndexModel homeModel = new HomeIndexModel(categoryService);        
+            HomeIndexModel homeModel = new HomeIndexModel(categoryService);
+            homeModel.Products = productService.GetMainProducts(id);// convert to
             return View(homeModel);
         }
 
@@ -50,13 +44,6 @@ namespace GameShop.Controllers
         }
 
 
-        public PartialViewResult _CategoriesPartial()
-        {         
-            IEnumerable<CategoriesDTO> categoriesDto = categoryService.GetAllCategories();
-            Mapper.Initialize(cfg => cfg.CreateMap<CategoriesDTO, CategoryViewModel>());
-            var category = Mapper.Map<IEnumerable<CategoriesDTO>, List<CategoryViewModel>>(categoriesDto);
-
-            return PartialView("_CategoriesPartial", category);
-        }
+        
     }
 }

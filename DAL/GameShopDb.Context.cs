@@ -19,15 +19,10 @@ namespace DAL
             : base("name=OnlineStoreEntities4")
         {
         }
-        public OnlineStoreEntities4(string connectionString)
-            : base(connectionString)
-        {
-           
-        }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }

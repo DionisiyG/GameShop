@@ -28,7 +28,7 @@ namespace DAL.Repositories
             }
         }
 
-        public Products Get(int id)
+        public Products Get(string id)
         {
             return db.Products.Find(id);
         }
@@ -36,6 +36,11 @@ namespace DAL.Repositories
         public IEnumerable<Products> GetAll()
         {
             return db.Products;
+        }
+
+        public Products GetProductsByCategories(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Products product)

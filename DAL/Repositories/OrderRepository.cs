@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public class OrderRepository : BaseRepository<Orders>, IRepository<Orders>
+    public class OrderRepository : BaseRepository<Orders>, IOrderRepository<Orders>
     {      
         public OrderRepository(OnlineStoreEntities4 context)
         {
@@ -30,7 +30,7 @@ namespace DAL.Repositories
             }
         }
 
-        public Orders Get(int id)
+        public Orders Get(string id)
         {
             return db.Orders.Find(id);
         }
@@ -38,6 +38,11 @@ namespace DAL.Repositories
         public IEnumerable<Orders> GetAll()
         {
             return db.Orders;
+        }
+
+        public Orders GetProductsByCategories(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Orders order)

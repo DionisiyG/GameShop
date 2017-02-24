@@ -29,7 +29,7 @@ namespace DAL.Repositories
             }
         }
 
-        public AspNetUsers Get(int id)
+        public AspNetUsers Get(string id)
         {
             return db.AspNetUsers.Find(id);
         }
@@ -37,6 +37,11 @@ namespace DAL.Repositories
         public IEnumerable<AspNetUsers> GetAll()
         {
             return db.AspNetUsers;
+        }
+
+        public AspNetUsers GetProductsByCategories(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(AspNetUsers customer)

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DTO;
 
 namespace GameShop.Models
 {
@@ -26,5 +27,8 @@ namespace GameShop.Models
                 return new List<CategoriesDTO>();
             }
         }
+
+        public IList<ProductDto> Products { get; internal set; }
+        //public IList<ProductViewModel> ViewProducts { get; internal set; }
     }
 }

@@ -28,7 +28,7 @@ namespace DAL.Repositories
             }
         }
 
-        public Categories Get(int id)
+        public Categories Get(string id)
         {
             return db.Categories.Find(id);
         }
@@ -42,5 +42,11 @@ namespace DAL.Repositories
         {
             db.Entry(category).State = EntityState.Modified;
         }
+
+        public Categories GetProductsByCategories(string id)
+        {
+            Categories prodsByCategs = db.Categories.Where(x=> x.Id == id).FirstOrDefault();
+            return prodsByCategs;
+        }       
     }
 }

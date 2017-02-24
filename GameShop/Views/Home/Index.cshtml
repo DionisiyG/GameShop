@@ -45,39 +45,53 @@
                 <div class="products">
                     <div class="cl">&nbsp;</div>
                     <ul>
-                        <li>
+                        @foreach (var product in Model.Products)
+                        {
+                            <li>
+                                <a href="#"><img src="~/Content/css/images/big1.jpg" alt="" /></a>
+                                <div class="product-info">
+                                    <h3>@product.ProductName</h3>
+                                    <div class="product-desc">
+                                        <h4>WOMEN’S</h4>
+                                        <p>Really good coat, dude!<br /></p>
+                                        <strong class="price">$@product.Price</strong>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        @*<li>
                             <a href="#"><img src="~/Content/css/images/big1.jpg" alt="" /></a>
                             <div class="product-info">
-                                <h3>LOREM IPSUM</h3>
+                                <h3>SOME_GOOD_COAT</h3>
                                 <div class="product-desc">
                                     <h4>WOMEN’S</h4>
-                                    <p>Lorem ipsum dolor sit<br />amet</p>
-                                    <strong class="price">$58.99</strong>
+                                    <p>Really good coat, dude!<br /></p>
+                                    <strong class="price">$38.99</strong>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <a href="#"><img src="~/Content/css/images/big1.jpg" alt="" /></a>
                             <div class="product-info">
-                                <h3>LOREM IPSUM</h3>
+                                <h3>SOME_MIDDLE_COAT</h3>
                                 <div class="product-desc">
-                                    <h4>WOMEN’S</h4>
-                                    <p>Lorem ipsum dolor sit<br />amet</p>
-                                    <strong class="price">$58.99</strong>
+                                    <h4>MEN’S</h4>
+                                    <p>Men`s health in pants!<br /></p>
+                                    <strong class="price">$11.30</strong>
                                 </div>
                             </div>
                         </li>
                         <li class="last">
                             <a href="#"><img src="~/Content/css/images/big1.jpg" alt="" /></a>
                             <div class="product-info">
-                                <h3>LOREM IPSUM</h3>
+                                <h3>BALALAIKA</h3>
                                 <div class="product-desc">
-                                    <h4>WOMEN’S</h4>
-                                    <p>Lorem ipsum dolor sit<br />amet</p>
+                                    <h4>TRANSGENDER</h4>
+                                    <p>For those who are with/out<br /></p>
                                     <strong class="price">$58.99</strong>
                                 </div>
                             </div>
-                        </li>
+                        </li>*@
                     </ul>
                     <div class="cl">&nbsp;</div>
                 </div>
@@ -170,24 +184,24 @@
             <div class="cols">
                 <div class="cl">&nbsp;</div>
                 <div class="col">
-                    <h3 class="ico ico1">Donec imperdiet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-                    <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    <h3 class="ico ico1">Plane in the left</h3>
+                    <p>Love is in the air</p>
+                    <p class="more"><a href="#" class="bul">More</a></p>
                 </div>
                 <div class="col">
-                    <h3 class="ico ico2">Donec imperdiet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-                    <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    <h3 class="ico ico2">Dzin-Dzin</h3>
+                    <p>If you want to talks - take your phone and call.</p>
+                    <p class="more"><a href="#" class="bul">More</a></p>
                 </div>
                 <div class="col">
-                    <h3 class="ico ico3">Donec imperdiet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-                    <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    <h3 class="ico ico3">Present box</h3>
+                    <p>There are a lot of questions to the chocolate box!</p>
+                    <p class="more"><a href="#" class="bul">More</a></p>
                 </div>
                 <div class="col col-last">
-                    <h3 class="ico ico4">Donec imperdiet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-                    <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    <h3 class="ico ico4">Basket</h3>
+                    <p>Ball is not so good as steel ballz, if you know what I mean</p>
+                    <p class="more"><a href="#" class="bul">More</a></p>
                 </div>
                 <div class="cl">&nbsp;</div>
             </div>
