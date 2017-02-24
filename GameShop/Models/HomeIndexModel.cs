@@ -29,6 +29,7 @@ namespace GameShop.Models
         }
 
         public IList<ProductDto> Products { get; internal set; }
+        public IList<ProductDto> ProductsInfo { get; internal set; }
         //public IList<ProductViewModel> ViewProducts { get; internal set; }
     }
 }

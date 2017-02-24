@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using DAL.Repositories;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +12,12 @@ namespace GameShop.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        // GET: ShoppingCart
-        public ActionResult ShopMenu()
+        EFUnitOfWork db = new EFUnitOfWork(); 
+        [HttpPost]
+        public void ShopMenu(Orders order)
         {
-            return View();
+            db.Orders.Create(order);
+            db.Save();
         }
 
         //public string ShopMenu()

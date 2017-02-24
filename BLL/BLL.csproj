@@ -58,10 +58,13 @@
   <ItemGroup>
     <Compile Include="CategoriesDTO.cs" />
     <Compile Include="CategoryManager.cs" />
+    <Compile Include="Interfaces\IOrderService.cs" />
     <Compile Include="Interfaces\IProductsService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
+    <Compile Include="OrdersDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModule.cs" />
+    <Compile Include="ServiceProviders\OrderService.cs" />
     <Compile Include="ServiceProviders\ProductsService.cs" />
   </ItemGroup>
   <ItemGroup>

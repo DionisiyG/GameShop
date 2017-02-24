@@ -36,6 +36,13 @@ namespace GameShop.Controllers
             return View(homeModel);
         }
 
+        public ActionResult GetDetails(string id)
+        {
+            HomeIndexModel homeModel = new HomeIndexModel(categoryService);
+            homeModel.Products = productService.GetProductInfo(id);// convert to
+            return View(homeModel);
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

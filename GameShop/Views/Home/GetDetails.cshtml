@@ -1,0 +1,32 @@
+﻿@model GameShop.Models.HomeIndexModel
+@{
+    ViewBag.Title = "GetDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="products">
+        <div class="cl">&nbsp;</div>
+        
+            @foreach (var product in Model.Products)
+            {
+                <li>
+                    <a><img src="~/Content/css/images/big1.jpg" alt="" /></a>                                               
+                </li>
+                <div class="description">
+                <div class="product-info">
+                    <h3>@product.ProductName</h3>
+                    <div class="product-desc">
+                        <h4>WOMEN’S</h4>
+                        <p>@product.Description<br /></p>
+                        <strong class="price">$@product.Price</strong>
+                    </div>
+                    <form action="/ShoppingCart/ShopMenu" method="post"></form>
+                    <input id="products" name="products" type="submit" class="btn btn-success" value="Add to cart" />
+                </div>
+                    
+                </div>
+            }
+        
+        <div class="cl">&nbsp;</div>
+    </div>
+
+

@@ -324,6 +324,7 @@
     <Content Include="Views\Shared\_CategoriesPartial.cshtml" />
     <Content Include="Views\ShoppingCart\ShopMenu.cshtml" />
     <Content Include="Views\Categories\InnerCategory.cshtml" />
+    <Content Include="Views\Home\GetDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

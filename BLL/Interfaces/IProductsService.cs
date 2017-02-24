@@ -12,5 +12,6 @@ namespace BLL.Interfaces
    public interface IProductsService
     {
         IList<ProductDto> GetMainProducts(string catId);
+        IList<ProductDto> GetProductInfo(string prodId);
     }
 }

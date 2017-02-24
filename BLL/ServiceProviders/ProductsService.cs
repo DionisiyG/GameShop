@@ -32,6 +32,14 @@ namespace BLL.ServiceProviders
             Mapper.Initialize(cfg => cfg.CreateMap<Products, ProductDto>());
             return Mapper.Map<IEnumerable<Products>, List<ProductDto>>(result);
         }
+
+        public IList<ProductDto> GetProductInfo(string prodId)
+        {
+            IList<Products> result;
+             result = Database.Products.GetAll().Where(x => x.Id == prodId).ToList();
+            Mapper.Initialize(cfg => cfg.CreateMap<Products, ProductDto>());
+            return Mapper.Map<IEnumerable<Products>, List<ProductDto>>(result);
+        }
     }
 }
 
